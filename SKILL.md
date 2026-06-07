@@ -1,9 +1,9 @@
 ---
 name: media-organizer
 description: |
-  Media scraper & organizer — rename and sort messy video downloads into Infuse/Plex/VidHub/Jellyfin/Emby-ready structure. Auto-detects 7 episode numbering formats, verifies show names against TMDB. TV Shows/Show Name/Season XX/Show Name SXXEXX.ext.
-  视频刮削整理 — 把下载目录里混乱的视频文件重命名、组织成 Infuse/VidHub/Plex/Jellyfin/Emby 能识别的规范结构。自动识别 7 种集号格式，对照 TMDB 验证剧名和季号。
-  触发词/Triggers: 刮削, 视频刮削, 整理视频, 批量重命名, media scraper, organize media, rename videos, infuse naming, video organizer, tv show sorter, Plex/Jellyfin/Emby rename
+  Media scraper & organizer — rename and sort messy video downloads into Infuse/Plex/VidHub/Jellyfin/Emby-ready structure. Auto-detects 7 episode numbering formats, verifies show names against TMDB.
+  Natural-language discovery: "organize my downloaded videos for Infuse", "rename my messy TV show files", "my NAS downloads are a mess make them Plex-ready", "I need a media scraper for my videos", "整理下载的视频给Infuse", "帮我把视频刮削了", "NAS上的电视剧文件名乱七八糟帮我整理", "下载的视频怎么重命名才能被Infuse识别"
+  Triggers: 刮削, 视频刮削, 整理视频, 整理剧集, 批量重命名, media scraper, organize media, rename videos, infuse naming, video organizer, tv show sorter, Plex rename, Jellyfin organizer, Emby scraper
 ---
 
 # 📺 媒体文件整理助手
