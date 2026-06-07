@@ -1,0 +1,17 @@
+{
+  "version": "1.0.0",
+  "author": "Felix",
+  "date": "2026-06-07",
+  "abstract": "Organize messy video downloads into Infuse/Plex/VidHub-ready structure. Auto-detects 7 episode numbering formats (S01E01, 1x01, S01EP1, 101, 第1季第3集, 剧名01.mp4, etc.), verifies show names against TMDB, and sorts into canonical TV Shows/Show Name/Season XX/ layout. Supports dry-run preview, --names mapping, batch execution. 整理下载的视频文件，自动识别 7 种集号格式，对照 TMDB 确定正确剧名和季号。",
+  "keywords": [
+    "刮削", "视频刮削", "媒体整理", "批量重命名", "整理剧集",
+    "media scraper", "media organizer", "video rename", "batch rename",
+    "infuse", "vidhub", "plex", "jellyfin", "emby",
+    "tmdb", "tv-shows", "movies"
+  ],
+  "references": [
+    "https://www.themoviedb.org/",
+    "https://agentskills.io/",
+    "https://support.firecore.com/hc/en-us/articles/215090947-Naming-Guide"
+  ]
+}
