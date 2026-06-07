@@ -30,7 +30,9 @@ NOISE_TAGS = [
     'REMUX', 'PROPER', 'REPACK', 'EXTENDED', 'UNCUT', 'DC',
     '10bit', '8bit', 'SDR',
     '内封', '内嵌', '官中', '中字', '双语',
+    'chs', 'eng', 'chi', 'ja', 'ko',  # 语言代码
     'CHD', 'WiKi', 'FRDS', 'CMCT', 'HQC', 'MTeam',
+    'CAKES', 'KOGi', 'NTb', 'TEPES', 'MiU',  # 常见压制组
 ]
 
 # ── 中文前缀清理 ──
@@ -45,8 +47,8 @@ SE_MARKERS = re.compile(
     r'|[Ss]eason\s*\d{1,2}\s*[Ee]p?\s*\d{1,2}'  # Season 1 Episode 1
     r'|第\s*\d{1,2}\s*季.*?第\s*\d{1,2}\s*集'   # 第1季第3集
     r'|[Ee][Pp]?\s*\d{1,2}'             # EP01
-    r'|(?<!\d)\d{3,4}(?!\d|[pPiI])'    # 101 格式
-    r'|\d{2,3}$'                        # 末尾裸数字 01-999（剧名01.mp4 格式）
+    r'|(?<=[^A-Za-z0-9])\d{3,4}(?!\d|[pPiI])'  # 101格式（前有非字母数字，排除1883和H264）
+    r'|(?<=[^A-Za-z0-9])\d{2,3}$'              # 末尾裸数字 01-99（排除纯数字剧名和codec号）
 )
 
 YEAR_PATTERN = re.compile(r'(?:19|20)\d{2}')  # 年份
@@ -91,8 +93,8 @@ def clean_show_name(filename, name_map=None):
     for tag in NOISE_TAGS:
         name = re.sub(rf'\b{re.escape(tag)}\b', ' ', name, flags=re.I)
 
-    # 点号、下划线 → 空格
-    name = name.replace('.', ' ').replace('_', ' ')
+    # 点号、下划线、连字符 → 空格
+    name = name.replace('.', ' ').replace('_', ' ').replace('-', ' ')
 
     # 压缩空格，trim
     name = re.sub(r'\s+', ' ', name).strip()

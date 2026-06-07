@@ -19,9 +19,9 @@ SE_PATTERNS = [
     re.compile(r'[Ee][Pp]?\s*(\d{1,2})'),                  # EP01 / E01 (只有集号，没有季号)
     # 纯数字集号: 101→S01E01, 110→S01E10, 201→S02E01, 1001→S10E01
     # 3位(sXEE)或4位(sXXEE)，排除年份(19xx/20xx)和常见分辨率(720/1080/2160/4320)
-    re.compile(r'(?<!\d)([1-9]\d?)(\d{2})(?!\d|[pPiI])'),
-    # 裸数字编号: 剧名01.mp4 / 剧名21.mp4 → 纯集号（在扩展名之前的2-3位数字）
-    re.compile(r'(\d{2,3})\.(?:mp4|mkv|m4v|avi|mov|wmv|flv|webm)$', re.I),
+    re.compile(r'(?<=[^A-Za-z0-9])([1-9]\d?)(\d{2})(?!\d|[pPiI])'),
+    # 裸数字编号: 剧名01.mp4 → 纯集号（前有非字母数字，排除开头纯数字剧名和codec号）
+    re.compile(r'(?<=[^A-Za-z0-9])(\d{2,3})\.(?:mp4|mkv|m4v|avi|mov|wmv|flv|webm)$', re.I),
 ]
 
 # 年份模式
